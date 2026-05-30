@@ -1,0 +1,44 @@
+<svg width="640" height="112" viewBox="0 0 640 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="horizontalStroke" x1="11" y1="14" x2="53" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9F180"/>
+      <stop offset="0.55" stop-color="#D2DF67"/>
+      <stop offset="1" stop-color="#B9CB49"/>
+    </linearGradient>
+    <linearGradient id="horizontalCore" x1="32" y1="22" x2="32" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F8C4"/>
+      <stop offset="1" stop-color="#D2DF67"/>
+    </linearGradient>
+    <linearGradient id="horizontalHighlight" x1="15" y1="17" x2="49" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFDE6" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#FCFDE6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="horizontalGlow" x="4" y="10" width="56" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="2.4" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(0 24)">
+    <g filter="url(#horizontalGlow)" opacity="0.2">
+      <polyline points="12 18 24 18 32 26" stroke="#DCE96E" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="12 46 24 46 32 38" stroke="#DCE96E" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="52 18 40 18 32 26" stroke="#DCE96E" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="52 46 40 46 32 38" stroke="#DCE96E" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="32" y1="24" x2="32" y2="40" stroke="#E5EF7A" stroke-width="6.5" stroke-linecap="round"/>
+    </g>
+
+    <polyline points="12 18 24 18 32 26" stroke="url(#horizontalStroke)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="12 46 24 46 32 38" stroke="url(#horizontalStroke)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="52 18 40 18 32 26" stroke="url(#horizontalStroke)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="52 46 40 46 32 38" stroke="url(#horizontalStroke)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="32" y1="24" x2="32" y2="40" stroke="url(#horizontalCore)" stroke-width="6.5" stroke-linecap="round"/>
+
+    <polyline points="13.5 18 24 18 30.5 24.5" stroke="url(#horizontalHighlight)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="50.5 18 40 18 33.5 24.5" stroke="url(#horizontalHighlight)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="78" y="50" fill="#F4F1E7" font-size="27" font-weight="600" letter-spacing="-0.03em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif">HotimerLabs</text>
+  <text x="79" y="78" fill="#7D817F" font-size="13" font-weight="500" letter-spacing="0.22em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif">WEB3 GROWTH ADVISORY</text>
+</svg>

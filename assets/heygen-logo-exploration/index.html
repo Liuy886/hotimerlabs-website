@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotimerLabs Logo Reveal</title>
+    <style>
+      :root {
+        --bg: #05080a;
+        --surface: #0b1012;
+        --ink: #f4f1e7;
+        --muted: #8b8e88;
+        --lime: #dde76a;
+        --ivory: #f0efe4;
+        --sage: #8fa49b;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+      }
+
+      [data-composition-id="hotimerlabs-logo-reveal"] {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      .frame {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 120px;
+        box-sizing: border-box;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+      }
+
+      .mark {
+        width: 190px;
+        height: 190px;
+        will-change: transform, opacity;
+      }
+
+      .wordmark {
+        display: grid;
+        gap: 16px;
+        will-change: transform, opacity;
+      }
+
+      .name {
+        font-size: 76px;
+        font-weight: 720;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .subline {
+        color: var(--muted);
+        font-size: 22px;
+        font-weight: 560;
+        letter-spacing: 0.22em;
+      }
+
+      .rule {
+        position: absolute;
+        left: 240px;
+        right: 240px;
+        bottom: 170px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(221, 231, 106, 0.7), transparent);
+        opacity: 0.55;
+        transform-origin: center;
+      }
+
+      .caption {
+        position: absolute;
+        left: 240px;
+        bottom: 110px;
+        color: var(--muted);
+        font-size: 22px;
+        font-weight: 520;
+        letter-spacing: 0.08em;
+      }
+
+      .corner {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 1px solid rgba(143, 164, 155, 0.2);
+      }
+
+      .corner.a {
+        top: 96px;
+        left: 96px;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .corner.b {
+        right: 96px;
+        bottom: 96px;
+        border-left: 0;
+        border-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      data-composition-id="hotimerlabs-logo-reveal"
+      data-width="1920"
+      data-height="1080"
+      data-start="0"
+      data-duration="4"
+      data-track-index="0"
+    >
+      <div class="corner a"></div>
+      <div class="corner b"></div>
+      <div class="frame">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 190 190" aria-hidden="true">
+            <rect x="18" y="24" width="42" height="142" rx="14" fill="#DDE76A" />
+            <rect x="130" y="24" width="42" height="142" rx="14" fill="#F0EFE4" />
+            <path d="M58 78H132V112H58V78Z" fill="#8FA49B" />
+            <path d="M78 52H112V138H78V52Z" fill="#05080A" />
+            <path d="M60 78H92L78 112H46L60 78Z" fill="#F0EFE4" />
+            <path d="M98 78H130L116 112H84L98 78Z" fill="#DDE76A" />
+          </svg>
+          <div class="wordmark">
+            <div class="name">HotimerLabs</div>
+            <div class="subline">WEB3 GROWTH ADVISORY</div>
+          </div>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="caption">GTM · LISTING · LIQUIDITY · MARKET MAKING</div>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+
+        tl.from(".mark rect, .mark path", { y: 20, opacity: 0, duration: 0.42, stagger: 0.055 }, 0);
+        tl.from(".wordmark", { x: 34, opacity: 0, duration: 0.55 }, 0.22);
+        tl.from(".rule", { scaleX: 0, opacity: 0, duration: 0.62 }, 0.46);
+        tl.from(".caption", { y: 18, opacity: 0, duration: 0.5 }, 0.72);
+        tl.from(".corner", { opacity: 0, scale: 0.94, duration: 0.6, stagger: 0.08 }, 0.2);
+        tl.to(".mark", { scale: 1.035, duration: 0.42, ease: "power2.inOut" }, 1.35);
+        tl.to(".mark", { scale: 1, duration: 0.42, ease: "power2.inOut" }, 1.77);
+
+        window.__timelines["hotimerlabs-logo-reveal"] = tl;
+      </script>
+    </div>
+  </body>
+</html>

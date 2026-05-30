@@ -1,0 +1,12 @@
+<svg width="520" height="160" viewBox="0 0 520 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="160" fill="#05080A"/>
+  <g transform="translate(34 35)">
+    <path d="M20 6H68C76.837 6 84 13.163 84 22V70C84 78.837 76.837 86 68 86H20C11.163 86 4 78.837 4 70V22C4 13.163 11.163 6 20 6Z" stroke="#8FA49B" stroke-width="10"/>
+    <path d="M24 18H40V74H24V18Z" fill="#DDE76A"/>
+    <path d="M48 18H64V74H48V18Z" fill="#F0EFE4"/>
+    <path d="M39 38H49V54H39V38Z" fill="#05080A"/>
+    <path d="M12 68C34 54 58 38 80 20" stroke="#DDE76A" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="148" y="68" fill="#F4F1E7" font-size="32" font-weight="650" letter-spacing="-0.01em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif">HotimerLabs</text>
+  <text x="150" y="98" fill="#8B8E88" font-size="14" font-weight="520" letter-spacing="0.18em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', Arial, sans-serif">WEB3 GROWTH ADVISORY</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hotimerlabsMark" x1="11" y1="11" x2="53" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3EE73"/>
+      <stop offset="1" stop-color="#C7D759"/>
+    </linearGradient>
+    <linearGradient id="hotimerlabsHighlight" x1="17" y1="12" x2="47" y2="47" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3F6BF" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#F3F6BF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="hotimerlabsGlow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="3.2" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#hotimerlabsGlow)" opacity="0.22">
+    <path d="M14 12L28 26" stroke="#DCE96E" stroke-width="8.5" stroke-linecap="round"/>
+    <path d="M36 34L50 48" stroke="#DCE96E" stroke-width="8.5" stroke-linecap="round"/>
+    <path d="M50 12L36 26" stroke="#DCE96E" stroke-width="8.5" stroke-linecap="round"/>
+    <path d="M28 34L14 48" stroke="#DCE96E" stroke-width="8.5" stroke-linecap="round"/>
+  </g>
+
+  <path d="M14 12L28 26" stroke="url(#hotimerlabsMark)" stroke-width="8.5" stroke-linecap="round"/>
+  <path d="M36 34L50 48" stroke="url(#hotimerlabsMark)" stroke-width="8.5" stroke-linecap="round"/>
+  <path d="M50 12L36 26" stroke="url(#hotimerlabsMark)" stroke-width="8.5" stroke-linecap="round"/>
+  <path d="M28 34L14 48" stroke="url(#hotimerlabsMark)" stroke-width="8.5" stroke-linecap="round"/>
+
+  <path d="M16 12L28.5 24.5" stroke="url(#hotimerlabsHighlight)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 34L48 44" stroke="url(#hotimerlabsHighlight)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 12L37.5 22.5" stroke="url(#hotimerlabsHighlight)" stroke-width="2" stroke-linecap="round"/>
+</svg>

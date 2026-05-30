@@ -1,0 +1,91 @@
+<svg width="1600" height="1600" viewBox="0 0 1600 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1600" fill="#05080A"/>
+  <rect x="64" y="64" width="1472" height="1472" rx="32" fill="#080C0E" stroke="#1B2222"/>
+  <text x="112" y="142" fill="#F4F1E7" font-size="50" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif">HotimerLabs legacy-inspired palette refresh</text>
+  <text x="114" y="186" fill="#8B8E88" font-size="18" font-weight="560" letter-spacing="0.12em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', Arial, sans-serif">BORROW THE OLD FLAME / COMPASS MEMORY, RECOLOR FOR THE CURRENT WEB3 SITE</text>
+
+  <defs>
+    <linearGradient id="boardLime" x1="0" y1="0" x2="170" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1F4A2"/>
+      <stop offset="0.45" stop-color="#DCE96E"/>
+      <stop offset="1" stop-color="#8FA49B"/>
+    </linearGradient>
+    <linearGradient id="boardTeal" x1="0" y1="0" x2="170" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E4F075"/>
+      <stop offset="0.5" stop-color="#7DE0C8"/>
+      <stop offset="1" stop-color="#6B7E7A"/>
+    </linearGradient>
+    <linearGradient id="boardWarm" x1="0" y1="0" x2="170" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2D56F"/>
+      <stop offset="0.42" stop-color="#DDE76A"/>
+      <stop offset="0.72" stop-color="#7DE0C8"/>
+      <stop offset="1" stop-color="#8FA49B"/>
+    </linearGradient>
+    <linearGradient id="boardInner" x1="70" y1="60" x2="126" y2="158" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101619"/>
+      <stop offset="1" stop-color="#05080A"/>
+    </linearGradient>
+    <style>
+      .card { fill: #0B1012; stroke: #202727; }
+      .label { fill: #DDE76A; font: 700 17px -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif; letter-spacing: .14em; }
+      .word { fill: #F4F1E7; font: 650 40px -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif; letter-spacing: 0; }
+      .sub { fill: #8B8E88; font: 560 13px -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif; letter-spacing: .18em; }
+      .note { fill: #A0A79F; font: 500 17px -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif; letter-spacing: 0; }
+    </style>
+  </defs>
+
+  <g transform="translate(112 280)">
+    <rect class="card" width="620" height="500" rx="24"/>
+    <text class="label" x="38" y="56">01 LIME COMPASS</text>
+    <g transform="translate(212 90)">
+      <path d="M80 0C53 29 29 51 18 78C12 93 9 108 9 122H55C57 94 66 75 84 58C93 50 98 37 98 18V0H80Z" fill="url(#boardLime)"/>
+      <path d="M116 0C143 29 167 51 178 78C184 93 187 108 187 122H141C139 94 130 75 112 58C103 50 98 37 98 18V0H116Z" fill="url(#boardLime)"/>
+      <path d="M9 138C12 170 43 191 84 204L84 158C65 153 58 147 55 138H9Z" fill="url(#boardLime)"/>
+      <path d="M187 138C184 170 153 191 112 204L112 158C131 153 138 147 141 138H187Z" fill="url(#boardLime)"/>
+      <path d="M98 58L138 98L98 158L58 98L98 58Z" fill="url(#boardInner)"/>
+      <circle cx="98" cy="98" r="13" fill="#DCE96E"/>
+      <path d="M98 42V58M98 138V154M42 98H58M138 98H154" stroke="#DCE96E" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text class="word" x="160" y="354">HotimerLabs</text>
+    <text class="sub" x="162" y="388">WEB3 GROWTH ADVISORY</text>
+    <text class="note" x="38" y="452">Closest to the current website palette. Safe, clean, and credible.</text>
+  </g>
+
+  <g transform="translate(868 280)">
+    <rect class="card" width="620" height="500" rx="24"/>
+    <text class="label" x="38" y="56">02 TEAL SIGNAL</text>
+    <g transform="translate(212 90)">
+      <path d="M80 0C53 29 29 51 18 78C12 93 9 108 9 122H55C57 94 66 75 84 58C93 50 98 37 98 18V0H80Z" fill="url(#boardTeal)"/>
+      <path d="M116 0C143 29 167 51 178 78C184 93 187 108 187 122H141C139 94 130 75 112 58C103 50 98 37 98 18V0H116Z" fill="url(#boardTeal)"/>
+      <path d="M9 138C12 170 43 191 84 204L84 158C65 153 58 147 55 138H9Z" fill="url(#boardTeal)"/>
+      <path d="M187 138C184 170 153 191 112 204L112 158C131 153 138 147 141 138H187Z" fill="url(#boardTeal)"/>
+      <path d="M98 58L138 98L98 158L58 98L98 58Z" fill="url(#boardInner)"/>
+      <circle cx="98" cy="98" r="13" fill="#DDE76A"/>
+      <circle cx="98" cy="98" r="5" fill="#05080A"/>
+      <path d="M98 42V58M98 138V154M42 98H58M138 98H154" stroke="#7DE0C8" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text class="word" x="160" y="354">HotimerLabs</text>
+    <text class="sub" x="162" y="388">WEB3 GROWTH ADVISORY</text>
+    <text class="note" x="38" y="452">More Web3-native. The teal echo connects to the hero visual.</text>
+  </g>
+
+  <g transform="translate(490 830)">
+    <rect class="card" width="620" height="500" rx="24"/>
+    <text class="label" x="38" y="56">03 WARM SIGNAL</text>
+    <g transform="translate(212 90)">
+      <path d="M80 0C53 29 29 51 18 78C12 93 9 108 9 122H55C57 94 66 75 84 58C93 50 98 37 98 18V0H80Z" fill="url(#boardWarm)"/>
+      <path d="M116 0C143 29 167 51 178 78C184 93 187 108 187 122H141C139 94 130 75 112 58C103 50 98 37 98 18V0H116Z" fill="url(#boardWarm)"/>
+      <path d="M9 138C12 170 43 191 84 204L84 158C65 153 58 147 55 138H9Z" fill="url(#boardWarm)"/>
+      <path d="M187 138C184 170 153 191 112 204L112 158C131 153 138 147 141 138H187Z" fill="url(#boardWarm)"/>
+      <path d="M98 58L138 98L98 158L58 98L98 58Z" fill="url(#boardInner)"/>
+      <circle cx="98" cy="98" r="13" fill="#F2D56F"/>
+      <path d="M98 42V58M98 138V154M42 98H58M138 98H154" stroke="#DDE76A" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text class="word" x="160" y="354">HotimerLabs</text>
+    <text class="sub" x="162" y="388">WEB3 GROWTH ADVISORY</text>
+    <text class="note" x="38" y="452">Keeps a little old-brand warmth, but removes the purple/pink drift.</text>
+  </g>
+
+  <text x="112" y="1438" fill="#F4F1E7" font-size="24" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif">Recommendation</text>
+  <text x="112" y="1480" fill="#A0A79F" font-size="19" font-weight="520" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', Arial, sans-serif">Use 02 Teal Signal for stronger Web3 energy; use 01 Lime Compass if the header needs to stay quieter.</text>
+</svg>

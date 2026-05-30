@@ -1,0 +1,29 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="220" fill="#05080A"/>
+  <defs>
+    <linearGradient id="warmSignalOuter" x1="64" y1="20" x2="162" y2="194" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2D56F"/>
+      <stop offset="0.42" stop-color="#DDE76A"/>
+      <stop offset="0.72" stop-color="#7DE0C8"/>
+      <stop offset="1" stop-color="#8FA49B"/>
+    </linearGradient>
+    <linearGradient id="warmSignalInner" x1="78" y1="58" x2="134" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101619"/>
+      <stop offset="1" stop-color="#05080A"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(54 30)">
+    <path d="M80 0C53 29 29 51 18 78C12 93 9 108 9 122H55C57 94 66 75 84 58C93 50 98 37 98 18V0H80Z" fill="url(#warmSignalOuter)"/>
+    <path d="M116 0C143 29 167 51 178 78C184 93 187 108 187 122H141C139 94 130 75 112 58C103 50 98 37 98 18V0H116Z" fill="url(#warmSignalOuter)"/>
+    <path d="M9 138C12 170 43 191 84 204L84 158C65 153 58 147 55 138H9Z" fill="url(#warmSignalOuter)"/>
+    <path d="M187 138C184 170 153 191 112 204L112 158C131 153 138 147 141 138H187Z" fill="url(#warmSignalOuter)"/>
+    <path d="M98 58L138 98L98 158L58 98L98 58Z" fill="url(#warmSignalInner)"/>
+    <circle cx="98" cy="98" r="13" fill="#F2D56F"/>
+    <path d="M98 42V58" stroke="#DDE76A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M98 138V154" stroke="#DDE76A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M42 98H58" stroke="#DDE76A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M138 98H154" stroke="#DDE76A" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="286" y="103" fill="#F4F1E7" font-size="58" font-weight="650" letter-spacing="0" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif">HotimerLabs</text>
+  <text x="290" y="142" fill="#8B8E88" font-size="17" font-weight="560" letter-spacing="0.2em" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', Arial, sans-serif">WEB3 GROWTH ADVISORY</text>
+</svg>
