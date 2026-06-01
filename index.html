@@ -13,7 +13,7 @@
       property="og:description"
       content="A bilingual premium website for Web3 project incubation, market expansion, listing advisory and liquidity strategy."
     />
-    <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -27,9 +27,9 @@
           </span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#services" data-i18n="navServices">服务能力</a>
-          <a href="#model" data-i18n="navModel">方法论</a>
-          <a href="#proof" data-i18n="navProof">过往成果</a>
+          <a href="#services" data-i18n="navServices">我们做什么</a>
+          <a href="#model" data-i18n="navModel">如何执行</a>
+          <a href="#proof" data-i18n="navProof">合作成果</a>
           <a href="#contact" data-i18n="navContact">联系我们</a>
         </nav>
         <div class="header-actions" aria-label="Website controls">
@@ -51,7 +51,7 @@
                 我们为有全球野心的 Web3 项目与机构，提供从上市策略、市场进入、流动性设计到持续增长的全周期咨询与执行，帮助在关键市场建立深度、可持续的流动性与影响力。
               </p>
               <div class="hero-actions">
-                <a class="primary-btn" href="#contact">
+                <a class="primary-btn" href="https://t.me/Jessie_HotimerLabs" target="_blank" rel="noreferrer">
                   <span data-i18n="primaryCta">与我们咨询</span>
                 </a>
                 <a class="secondary-btn" href="#services" data-i18n="secondaryCta">了解我们的服务</a>
@@ -101,27 +101,27 @@
                   <section class="panel-side">
                     <article class="score-card">
                       <p class="mini-title" data-i18n="scoreLabel">Liquidity Score</p>
-                      <div class="score-ring" aria-hidden="true">
+                      <div class="score-ring" aria-hidden="true" data-score-ring>
                         <div class="score-ring-inner">
-                          <strong>87</strong>
+                          <strong data-score-value>87</strong>
                           <span>/100</span>
                         </div>
                       </div>
                       <p class="score-status" data-i18n="scoreStatus">Strong</p>
-                      <p class="score-note" data-i18n="scoreNote">较昨日 +6</p>
+                      <p class="score-note" data-i18n="scoreNote" data-score-note>较昨日 +6</p>
                     </article>
                     <div class="signal-list">
                       <div class="signal-row">
                         <span data-i18n="signalOne">有效价差</span>
-                        <b>2.1 bps</b>
+                        <b data-signal-spread>2.1 bps</b>
                       </div>
                       <div class="signal-row">
                         <span data-i18n="signalTwo">市场深度</span>
-                        <b>$42.6M</b>
+                        <b data-signal-depth>$42.6M</b>
                       </div>
                       <div class="signal-row">
                         <span data-i18n="signalThree">流动性韧性</span>
-                        <b data-i18n="signalThreeValue">高</b>
+                        <b data-i18n="signalThreeValue" data-signal-resilience>高</b>
                       </div>
                       <div class="signal-row">
                         <span data-i18n="signalFour">覆盖交易所</span>
@@ -140,7 +140,17 @@
                     <span class="trend-grid grid-one"></span>
                     <span class="trend-grid grid-two"></span>
                     <span class="trend-grid grid-three"></span>
-                    <span class="trend-line"></span>
+                    <svg class="trend-svg" viewBox="0 0 100 52" preserveAspectRatio="none" focusable="false">
+                      <polygon data-trend-area points="" />
+                      <polyline data-trend-line points="" />
+                      <g data-trend-dots></g>
+                    </svg>
+                    <span class="trend-y y-high" data-trend-y-high>高</span>
+                    <span class="trend-y y-mid" data-trend-y-mid>中</span>
+                    <span class="trend-y y-low" data-trend-y-low>低</span>
+                    <span class="trend-x x-one" data-trend-date-start>04-20</span>
+                    <span class="trend-x x-two" data-trend-date-mid>05-04</span>
+                    <span class="trend-x x-three" data-trend-date-end>05-18</span>
                   </div>
                   <p class="trend-caption" data-i18n="trendCaption">数据聚合自主流交易所与链上监控信号</p>
                 </section>
@@ -257,17 +267,17 @@
           <div class="services-cluster">
             <article class="service-card primary-card">
               <span class="service-index">01</span>
-              <h3 data-i18n="serviceOneTitle">Market Making Coordination</h3>
+              <h3 data-i18n="serviceOneTitle">做市协同</h3>
               <p data-i18n="serviceOneText">筛选与对接 MM partner，制定做市目标与协同机制，围绕 spread、market depth 与 trading quality 建立执行标准。</p>
             </article>
             <article class="service-card primary-card">
               <span class="service-index">02</span>
-              <h3 data-i18n="serviceTwoTitle">Liquidity Strategy</h3>
+              <h3 data-i18n="serviceTwoTitle">流动性策略</h3>
               <p data-i18n="serviceTwoText">围绕流通盘、预算、交易对结构、上所节点与上市后监测，设计项目的流动性路径与风险边界。</p>
             </article>
             <article class="service-card primary-card">
               <span class="service-index">03</span>
-              <h3 data-i18n="serviceThreeTitle">Exchange Listing Advisory</h3>
+              <h3 data-i18n="serviceThreeTitle">交易所上市顾问</h3>
               <p data-i18n="serviceThreeText">匹配交易所、准备上市材料、控制上线节奏，并让 listing 行为与真实 market readiness 保持一致。</p>
             </article>
           </div>
@@ -370,11 +380,28 @@
                 <p data-i18n="trustThreeText">基于项目阶段与目标，提供可执行的增长路径与资源对接。</p>
               </article>
             </div>
-            <a class="telegram-card" href="https://t.me/HotimerLabs" target="_blank" rel="noreferrer">
-              <span class="telegram-icon" aria-hidden="true"></span>
+            <a class="telegram-card" href="https://t.me/Jessie_HotimerLabs" target="_blank" rel="noreferrer">
+              <svg class="telegram-icon" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="telegram-card-gradient" x1="120" y1="228" x2="120" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#1D93D2" />
+                    <stop offset="1" stop-color="#38B0E3" />
+                  </linearGradient>
+                  <linearGradient id="telegram-card-highlight" x1="64" y1="22" x2="176" y2="170" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFFFFF" stop-opacity="0.22" />
+                    <stop offset="0.62" stop-color="#FFFFFF" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <circle cx="120" cy="120" r="108" fill="url(#telegram-card-gradient)" />
+                <circle cx="120" cy="120" r="107" fill="none" stroke="#BFEAFF" stroke-opacity="0.36" stroke-width="2" />
+                <circle cx="120" cy="120" r="104" fill="url(#telegram-card-highlight)" />
+                <path d="M81.229,128.772l14.237,39.406s1.78,3.687,3.686,3.687,30.255-29.492,30.255-29.492l31.525-60.89L81.737,118.6Z" fill="#C8DAEA" />
+                <path d="M100.106,138.878l-2.733,29.046s-1.144,8.9,7.754,0,17.415-15.763,17.415-15.763" fill="#A9C6D8" />
+                <path d="M81.486,130.178,52.2,120.636s-3.5-1.42-2.373-4.64c.232-.664.7-1.229,2.1-2.2,6.489-4.523,120.106-45.36,120.106-45.36s3.208-1.081,5.1-.362a2.766,2.766,0,0,1,1.885,2.055,9.357,9.357,0,0,1,.254,2.585c-.009.752-.1,1.449-.169,2.542-.692,11.165-21.4,94.493-21.4,94.493s-1.239,4.876-5.678,5.043A8.13,8.13,0,0,1,146.1,172.5c-8.711-7.493-38.819-27.727-45.472-32.177a1.27,1.27,0,0,1-.546-.9c-.093-.469.417-1.05.417-1.05s52.426-46.6,53.821-51.492c.108-.379-.3-.566-.848-.4-3.482,1.281-63.844,39.4-70.506,43.607A3.21,3.21,0,0,1,81.486,130.178Z" fill="#FFFFFF" />
+              </svg>
               <span>
                 <small data-i18n="telegramLabel">或直接通过 Telegram 联系我们</small>
-                <strong>@HotimerLabs</strong>
+                <strong>@Jessie_HotimerLabs</strong>
               </span>
             </a>
           </div>

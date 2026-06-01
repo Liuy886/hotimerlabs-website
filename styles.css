@@ -142,8 +142,8 @@ textarea {
 }
 
 .brand-mark {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   flex: none;
   display: block;
   object-fit: contain;
@@ -314,7 +314,7 @@ textarea {
 
 @media (min-width: 1181px) {
   .hero-copy {
-    margin-top: -42px;
+    margin-top: -154px;
   }
 }
 
@@ -538,7 +538,6 @@ h1 {
 .axis,
 .line,
 .trend-grid,
-.trend-line,
 .core-wireframe span {
   position: absolute;
 }
@@ -634,14 +633,16 @@ h1 {
   margin: 18px auto 14px;
   place-items: center;
   border-radius: 50%;
-  background: conic-gradient(var(--accent-bright) 0 312deg, rgba(255, 255, 255, 0.1) 312deg 360deg);
+  background: conic-gradient(var(--accent-bright) 0 var(--score-deg, 312deg), rgba(255, 255, 255, 0.1) var(--score-deg, 312deg) 360deg);
 }
 
 .score-ring-inner {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 92px;
   height: 92px;
-  place-items: center;
   border-radius: 50%;
   background: #15191f;
 }
@@ -650,12 +651,14 @@ h1 {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 600;
+  line-height: 1;
 }
 
 .score-ring-inner span {
-  margin-top: -8px;
+  margin-top: 2px;
   color: var(--soft);
   font-size: 12px;
+  line-height: 1.1;
 }
 
 .score-status {
@@ -695,7 +698,7 @@ h1 {
 .trend-head {
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .trend-head span {
@@ -705,9 +708,12 @@ h1 {
 
 .trend-chart {
   position: relative;
-  height: 168px;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+  height: 82px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 20% 88%, rgba(202, 216, 90, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent);
 }
 
 .trend-grid {
@@ -718,28 +724,89 @@ h1 {
 }
 
 .grid-one {
-  top: 34px;
+  top: 20px;
 }
 
 .grid-two {
-  top: 82px;
+  top: 42px;
 }
 
 .grid-three {
-  top: 130px;
+  top: 64px;
 }
 
-.trend-line {
-  right: 16px;
-  left: 16px;
-  bottom: 18px;
-  height: 122px;
-  border-bottom: 2px solid rgba(202, 216, 90, 0.9);
-  clip-path: polygon(0 88%, 8% 84%, 16% 72%, 24% 76%, 32% 58%, 40% 66%, 49% 51%, 58% 60%, 67% 44%, 76% 50%, 86% 34%, 93% 30%, 100% 18%, 100% 100%, 0 100%);
+.trend-svg {
+  position: absolute;
+  right: 52px;
+  bottom: 14px;
+  left: 24px;
+  z-index: 1;
+  width: calc(100% - 76px);
+  height: 58px;
+  overflow: visible;
+}
+
+.trend-svg polygon {
+  fill: rgba(202, 216, 90, 0.15);
+}
+
+.trend-svg polyline {
+  fill: none;
+  stroke: rgba(202, 216, 90, 0.96);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 7px rgba(202, 216, 90, 0.32));
+}
+
+.trend-svg circle {
+  fill: var(--accent-bright);
+  filter: drop-shadow(0 0 6px rgba(202, 216, 90, 0.42));
+}
+
+.trend-x,
+.trend-y {
+  position: absolute;
+  color: rgba(242, 241, 234, 0.44);
+  font-size: 9px;
+  line-height: 1;
+}
+
+.trend-y {
+  right: 18px;
+}
+
+.y-high {
+  top: 17px;
+}
+
+.y-mid {
+  top: 41px;
+}
+
+.y-low {
+  top: 63px;
+}
+
+.trend-x {
+  bottom: 5px;
+}
+
+.x-one {
+  left: 24px;
+}
+
+.x-two {
+  left: 46%;
+}
+
+.x-three {
+  right: 52px;
 }
 
 .trend-caption {
-  margin-top: 12px;
+  margin-top: 10px;
   margin-bottom: 0;
   font-size: 11px;
 }
@@ -1289,12 +1356,10 @@ h2 {
   width: 60px;
   height: 60px;
   flex: none;
+  display: block;
+  overflow: visible;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(202, 216, 90, 0.12), rgba(202, 216, 90, 0.02)),
-    linear-gradient(135deg, transparent 28%, rgba(202, 216, 90, 0.76) 29% 31%, transparent 32%),
-    linear-gradient(315deg, transparent 42%, rgba(202, 216, 90, 0.76) 43% 45%, transparent 46%);
-  border: 1px solid rgba(202, 216, 90, 0.38);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.22));
 }
 
 .telegram-card small {
@@ -1470,8 +1535,8 @@ h2 {
   }
 
   .brand-mark {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .brand-subline {

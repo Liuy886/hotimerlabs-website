@@ -1,10 +1,10 @@
-const telegramHandle = "HotimerLabs";
+const telegramHandle = "Jessie_HotimerLabs";
 
 const copy = {
   zh: {
-    navServices: "服务能力",
-    navModel: "方法论",
-    navProof: "过往成果",
+    navServices: "我们做什么",
+    navModel: "如何执行",
+    navProof: "合作成果",
     navContact: "联系我们",
     headerCta: "联系我们",
     heroTitle: "以 Market Making 为核心的 Web3 Listing、GTM 与流动性增长伙伴",
@@ -55,11 +55,11 @@ const copy = {
     coreMetricTwo: "累计做市对数",
     coreMetricThree: "平均提升深度",
     coreMetricFour: "项目合作续约率",
-    serviceOneTitle: "Market Making Coordination",
+    serviceOneTitle: "做市协同",
     serviceOneText: "筛选与对接 MM partner，制定做市目标与协同机制，围绕 spread、market depth 与 trading quality 建立执行标准。",
-    serviceTwoTitle: "Liquidity Strategy",
+    serviceTwoTitle: "流动性策略",
     serviceTwoText: "围绕流通盘、预算、交易对结构、上所节点与上市后监测，设计项目的流动性路径与风险边界。",
-    serviceThreeTitle: "Exchange Listing Advisory",
+    serviceThreeTitle: "交易所上市顾问",
     serviceThreeText: "匹配交易所、准备上市材料、控制上线节奏，并让 listing 行为与真实 market readiness 保持一致。",
     serviceFourTitle: "市场与品牌增长",
     serviceFourPointOne: "市场进入与叙事定位",
@@ -116,8 +116,8 @@ const copy = {
     footerLine: "Strategic Growth, Listing and Liquidity Partner for Web3 Projects and Exchanges."
   },
   en: {
-    navServices: "Services",
-    navModel: "Method",
+    navServices: "What We Do",
+    navModel: "How It Works",
     navProof: "Results",
     navContact: "Contact",
     headerCta: "Contact Us",
@@ -233,6 +233,172 @@ const copy = {
 
 let activeLang = "zh";
 
+const padDatePart = (value) => String(value).padStart(2, "0");
+
+const getLocalDateKey = (date) => {
+  const year = date.getFullYear();
+  const month = padDatePart(date.getMonth() + 1);
+  const day = padDatePart(date.getDate());
+  return `${year}-${month}-${day}`;
+};
+
+const addDays = (date, days) => new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
+
+const formatShortDate = (date) => `${padDatePart(date.getMonth() + 1)}-${padDatePart(date.getDate())}`;
+
+const hashString = (value) => {
+  let hash = 2166136261;
+
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+
+  return hash >>> 0;
+};
+
+const seededRandom = (seed) => {
+  let state = seed >>> 0;
+
+  return () => {
+    state += 0x6d2b79f5;
+    let result = state;
+    result = Math.imul(result ^ (result >>> 15), result | 1);
+    result ^= result + Math.imul(result ^ (result >>> 7), result | 61);
+    return ((result ^ (result >>> 14)) >>> 0) / 4294967296;
+  };
+};
+
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+const getDailyMetrics = (date) => {
+  const random = seededRandom(hashString(`liquidity:${getLocalDateKey(date)}`));
+
+  return {
+    score: 82 + Math.floor(random() * 13),
+    spread: 1.6 + random() * 1.2,
+    depth: 36 + random() * 22
+  };
+};
+
+const getResilienceLabel = (score, lang) => {
+  if (score >= 90) {
+    return lang === "zh" ? "强" : "Strong";
+  }
+
+  if (score >= 86) {
+    return lang === "zh" ? "高" : "High";
+  }
+
+  return lang === "zh" ? "稳定" : "Stable";
+};
+
+const getDailyLiquidityData = (date = new Date()) => {
+  const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const metrics = getDailyMetrics(today);
+  const previousMetrics = getDailyMetrics(addDays(today, -1));
+  const trendRandom = seededRandom(hashString(`trend:${getLocalDateKey(today)}`));
+  const trendValues = Array.from({ length: 30 }, (_, index) => {
+    const progress = index / 29;
+    const lift = (progress - 0.5) * 5.4;
+    const wave = Math.sin((index + trendRandom() * 4) * 0.62) * 2.4;
+    const noise = (trendRandom() - 0.5) * 3.2;
+    return clamp(metrics.score - 4 + lift + wave + noise, 76, 96);
+  });
+
+  trendValues[29] = metrics.score;
+
+  return {
+    ...metrics,
+    delta: metrics.score - previousMetrics.score,
+    trendValues,
+    dates: {
+      start: addDays(today, -29),
+      mid: addDays(today, -15),
+      end: today
+    }
+  };
+};
+
+const dailyLiquidityData = getDailyLiquidityData();
+
+const renderLiquidityPanel = () => {
+  const scoreValue = document.querySelector("[data-score-value]");
+  const scoreNote = document.querySelector("[data-score-note]");
+  const scoreRing = document.querySelector("[data-score-ring]");
+  const spreadValue = document.querySelector("[data-signal-spread]");
+  const depthValue = document.querySelector("[data-signal-depth]");
+  const resilienceValue = document.querySelector("[data-signal-resilience]");
+  const trendLine = document.querySelector("[data-trend-line]");
+  const trendArea = document.querySelector("[data-trend-area]");
+  const trendDots = document.querySelector("[data-trend-dots]");
+  const dateStart = document.querySelector("[data-trend-date-start]");
+  const dateMid = document.querySelector("[data-trend-date-mid]");
+  const dateEnd = document.querySelector("[data-trend-date-end]");
+  const yHigh = document.querySelector("[data-trend-y-high]");
+  const yMid = document.querySelector("[data-trend-y-mid]");
+  const yLow = document.querySelector("[data-trend-y-low]");
+
+  if (!scoreValue || !scoreNote || !scoreRing) {
+    return;
+  }
+
+  const { score, delta, spread, depth, trendValues, dates } = dailyLiquidityData;
+  const scoreDegrees = Math.round((score / 100) * 360);
+  const deltaText = `${delta >= 0 ? "+" : ""}${delta}`;
+
+  scoreValue.textContent = score;
+  scoreRing.style.setProperty("--score-deg", `${scoreDegrees}deg`);
+  scoreNote.textContent = activeLang === "zh" ? `较昨日 ${deltaText}` : `${deltaText} vs. yesterday`;
+
+  if (spreadValue) {
+    spreadValue.textContent = `${spread.toFixed(1)} bps`;
+  }
+
+  if (depthValue) {
+    depthValue.textContent = `$${depth.toFixed(1)}M`;
+  }
+
+  if (resilienceValue) {
+    resilienceValue.textContent = getResilienceLabel(score, activeLang);
+  }
+
+  if (trendLine && trendArea && trendDots) {
+    const minValue = Math.min(...trendValues) - 2;
+    const maxValue = Math.max(...trendValues) + 2;
+    const points = trendValues.map((value, index) => {
+      const x = 4 + (index / (trendValues.length - 1)) * 92;
+      const normalized = (value - minValue) / (maxValue - minValue || 1);
+      const y = 43 - normalized * 34;
+      return { x, y };
+    });
+    const pointText = points.map(({ x, y }) => `${x.toFixed(2)},${y.toFixed(2)}`).join(" ");
+    const areaText = `4,48 ${pointText} 96,48`;
+    const dotIndexes = [0, 7, 14, 22, 29];
+
+    trendLine.setAttribute("points", pointText);
+    trendArea.setAttribute("points", areaText);
+    trendDots.innerHTML = dotIndexes
+      .map((index) => {
+        const point = points[index];
+        return `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="1.25" />`;
+      })
+      .join("");
+  }
+
+  if (dateStart && dateMid && dateEnd) {
+    dateStart.textContent = formatShortDate(dates.start);
+    dateMid.textContent = formatShortDate(dates.mid);
+    dateEnd.textContent = formatShortDate(dates.end);
+  }
+
+  if (yHigh && yMid && yLow) {
+    yHigh.textContent = activeLang === "zh" ? "高" : "High";
+    yMid.textContent = activeLang === "zh" ? "中" : "Mid";
+    yLow.textContent = activeLang === "zh" ? "低" : "Low";
+  }
+};
+
 const setLanguage = (lang) => {
   activeLang = lang;
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -247,6 +413,8 @@ const setLanguage = (lang) => {
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
+
+  renderLiquidityPanel();
 };
 
 document.querySelectorAll("[data-lang]").forEach((button) => {
