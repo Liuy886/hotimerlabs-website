@@ -9,16 +9,16 @@ const copy = {
     headerCta: "联系我们",
     heroTitle: "以 Market Making 为核心的 Web3 Listing、GTM 与流动性增长伙伴",
     heroLede:
-      "我们为有全球野心的 Web3 项目与机构，提供从上市策略、市场进入、流动性设计到持续增长的全周期咨询与执行，帮助在关键市场建立深度、可持续的流动性与影响力。",
+      "围绕 Token 上市前后的关键窗口，我们协助项目方与交易所完成 MM 协同、交易所沟通、GTM/KOL/PR、社区激活与 post-listing review，让上市动作与真实市场深度、交易质量和持续市场兴趣保持一致。",
     primaryCta: "与我们咨询",
     secondaryCta: "了解我们的服务",
     metricOne: "覆盖的上市与市场进入场景",
     metricTwo: "流动性策略与部署经验",
     metricThree: "亚洲与全球主流交易时区覆盖",
-    panelLabel: "Liquidity Intelligence",
+    panelLabel: "流动性情报",
     insightTitle: "Depth Distribution",
     insightText: "多交易所订单簿深度",
-    scoreLabel: "Liquidity Score",
+    scoreLabel: "流动性评分",
     scoreStatus: "强劲",
     scoreNote: "较昨日 +6",
     signalOne: "有效价差",
@@ -26,7 +26,7 @@ const copy = {
     signalThree: "流动性韧性",
     signalThreeValue: "高",
     signalFour: "覆盖交易所",
-    trendTitle: "Liquidity Trend",
+    trendTitle: "流动性趋势",
     trendMeta: "30D",
     trendCaption: "数据聚合自主流交易所与链上监控信号",
     audienceEyebrow: "Coverage",
@@ -295,7 +295,10 @@ const getResilienceLabel = (score, lang) => {
 
 const getDailyLiquidityData = (date = new Date()) => {
   const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  const metrics = getDailyMetrics(today);
+  const metrics = {
+    ...getDailyMetrics(today),
+    score: 94
+  };
   const previousMetrics = getDailyMetrics(addDays(today, -1));
   const trendRandom = seededRandom(hashString(`trend:${getLocalDateKey(today)}`));
   const trendValues = Array.from({ length: 30 }, (_, index) => {
@@ -504,24 +507,16 @@ document.querySelector("[data-lead-form]").addEventListener("submit", async (eve
     `Need: ${formData.get("need") || "N/A"}`
   ].join("\n");
   const telegramUrl = `https://t.me/${telegramHandle}`;
-  const telegramWindow = window.open("", "_blank");
-
-  if (telegramWindow) {
-    telegramWindow.opener = null;
-  }
 
   try {
-    await navigator.clipboard.writeText(message);
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(message);
+    }
   } catch (error) {
-    window.prompt("Copy this message to Telegram:", message);
+    // Local file previews may block clipboard access; Telegram still opens below.
   }
 
-  if (telegramWindow) {
-    telegramWindow.location.replace(telegramUrl);
-    return;
-  }
-
-  window.location.href = telegramUrl;
+  window.open(telegramUrl, "_blank", "noopener,noreferrer");
 });
 
 setLanguage(activeLang);
