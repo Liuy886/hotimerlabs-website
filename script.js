@@ -231,7 +231,7 @@ const copy = {
   }
 };
 
-let activeLang = "zh";
+let activeLang = "en";
 
 const padDatePart = (value) => String(value).padStart(2, "0");
 
